@@ -9,5 +9,5 @@ document.getElementById('route-detail').textContent=ok?(relapse.indexOf(v)!==-1?
 button.disabled=!(firmware&&ok);
 document.getElementById('launch-label').textContent=firmware?(ok?'ابدأ تعديل PS5':'غير متاح لهذا الإصدار'):'افتح من متصفح PS5 للتشغيل';}
 if(!firmware){document.getElementById('desktop-preview').hidden=false;show(select.value);select.onchange=function(){show(select.value);};}else{show(firmware);}
-button.onclick=function(){if(firmware&&supported.indexOf(firmware)!==-1){window.location.href=(relapse.indexOf(firmware)!==-1?'relapse/index.html':'host/index.html');}};
+button.onclick=function(){if(window.omarOfflineBusy){document.getElementById("action-message").textContent="انتظر اكتمال حفظ الملفات قبل التشغيل.";return;}if(firmware&&supported.indexOf(firmware)!==-1){window.location.href=(relapse.indexOf(firmware)!==-1?'relapse/index.html':'host/index.html');}};
 })();
